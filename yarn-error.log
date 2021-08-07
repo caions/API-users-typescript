@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js dev:server
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add ysconfig-paths -D
 
 PATH: 
   /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,12 +14,17 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/caiolinux/Documentos/Projetos/backend-test/package.json: Unexpected token } in JSON at position 712
-      at JSON.parse (<anonymous>)
-      at /usr/share/yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/share/yarn/lib/cli.js:310:30)
-      at /usr/share/yarn/lib/cli.js:321:13
+  Error: https://registry.yarnpkg.com/ysconfig-paths: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66988:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:140749:22)
+      at Request.emit (events.js:400:28)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141721:10)
+      at Request.emit (events.js:400:28)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141643:12)
+      at Object.onceWrapper (events.js:519:28)
+      at IncomingMessage.emit (events.js:412:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
 
 npm manifest: 
   {
@@ -28,7 +33,7 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "scripts": {
-      "dev:server": "ts-node-dev --respawn --transpileOnly src/index.ts"
+      "dev:server": "ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts"
     },
     "devDependencies": {
       "@typescript-eslint/eslint-plugin": "^4.29.0",
@@ -46,8 +51,7 @@ npm manifest:
     "dependencies": {
       "@types/express": "^4.17.13",
       "express": "^4.17.1"
-    },
-  
+    }
   }
 
 yarn manifest: 
