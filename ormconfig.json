@@ -1,0 +1,15 @@
+{
+  "type": "postgres",
+  "host": "localhost",
+  "port": 5434,
+  "username": "postgres",
+  "password": "docker",
+  "database": "hivelabs_user",
+  "entities": ["./src/models/entities/*.ts"],
+  "migrations": [
+    "./src/models/migrations/*.ts"
+  ],
+  "cli":{
+    "migrationsDir": "./src/models/migrations"
+  }
+}
