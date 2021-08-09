@@ -5,8 +5,8 @@ Tabela de conteúdos
 =================
 <!--ts-->
    * [Pré-requisitos](#Pré-requisitos)
-   * [Instalação](#Instalacao)
-   * [Tecnologias](#tecnologias)
+   * [Instalação](#Instalação)
+   * [Tecnologias](#Tecnologias)
 <!--te-->
 
 ### Pré-requisitos
@@ -44,3 +44,13 @@ $ npm run dev:server ou yarn dev:server
 # O servidor inciará na porta:3333 - acesse e teste a api na rota
 # <http://localhost:3333/doc>
 ```
+
+### 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+- [Node.js]
+- [TypeScript]
+- [TypeOrm]
+- [Express]
+- [Swagger-autogen]
