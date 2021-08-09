@@ -32,6 +32,7 @@ $ npm install ou yarn install
 docker run --name hivelabs_testevaga -e POSTGRES_PASSWORD=docker -p 5434:5432 -d postgres
 
 # No seu gerenciador de banco de dados crie uma conexão com a porta 5434
+# com usuário postgres e senha docker
 
 # Rode as migrations para criar a tabela 'user' no banco de dados
 $ yarn typeorm migration:run
