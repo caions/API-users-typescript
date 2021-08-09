@@ -44,7 +44,8 @@ $ yarn doc ou npm run doc
 # Execute a aplicação em modo de desenvolvimento
 $ npm run dev:server ou yarn dev:server
 
-#### O servidor iniciará na porta:3333 - acesse e teste a api na rota <http://localhost:3333/doc>
+#### O servidor inciará na porta:3333
+#### acesse a documentação na rota <http://localhost:3333/doc>
 ```
 
 ### Tecnologias
