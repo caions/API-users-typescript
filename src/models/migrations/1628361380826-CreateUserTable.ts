@@ -20,7 +20,7 @@ export class CreateUserTable1628361380826 implements MigrationInterface {
             type: 'varchar',
           },
           {
-            name: 'nick_name',
+            name: 'nickname',
             type: 'varchar',
             isUnique: true,
             length: '30',
