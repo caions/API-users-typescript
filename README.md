@@ -18,7 +18,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-### 🎲 Instalação
+### Instalação
 
 ```bash
 # Clone este repositório
@@ -45,7 +45,7 @@ $ npm run dev:server ou yarn dev:server
 # <http://localhost:3333/doc>
 ```
 
-### 🛠 Tecnologias
+### Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
