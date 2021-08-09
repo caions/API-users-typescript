@@ -21,6 +21,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ### Instalação
 
+```bash
 # Clone este repositório
 $ git clone <https://github.com/caions/Test-Hivelabs.git>
 
@@ -45,7 +46,7 @@ $ npm run dev:server ou yarn dev:server
 
 #### O servidor inciará na porta:3333
 #### acesse a documentação na rota <http://localhost:3333/doc>
-
+```
 
 ### Tecnologias
 
