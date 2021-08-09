@@ -30,24 +30,24 @@ export class UsersControllers {
   }
 
   public async create(req: Request, res: Response): Promise<Response> {
-    const { nickname } = req.body;
+    const { name, lastName, nickname, address, bio } = req.body;
 
     const userRepository = new UsersRepository();
-    const user = await userRepository.findByNickname(
-      nickname.toLocaleLowerCase(),
-    );
+    const checkNicknameExist = await userRepository.findByNickname(nickname);
 
-    if (user) {
+    if (checkNicknameExist) {
       throw new AppError('Este nickname já esta em uso!');
     }
 
-    const newUser = {
-      ...req.body,
-    };
+    const user = await userRepository.create({
+      name,
+      lastName,
+      nickname,
+      address,
+      bio,
+    });
 
-    const novo = await userRepository.create(newUser);
-
-    return res.status(201).json(novo);
+    return res.status(201).json(user);
   }
 
   public async update(req: Request, res: Response): Promise<Response> {
@@ -62,7 +62,7 @@ export class UsersControllers {
     }
 
     if (lastName) {
-      user.lastName = lastName.toLowerCase();
+      user.lastName = lastName;
     }
 
     if (address) {
@@ -86,26 +86,26 @@ export class UsersControllers {
     }
 
     if (nickname) {
-      const findNickname = await userRepository.findByNickname(nickname);
+      const checkNicknameExists = await userRepository.findByNickname(nickname);
 
-      if (findNickname) {
+      if (checkNicknameExists) {
         throw new AppError('Este nickname já esta em uso!');
       }
-      user.nickname = nickname.toLowerCase();
+      user.nickname = nickname;
     }
 
-    await userRepository.save(user);
+    const updatedUser = await userRepository.save(user);
 
-    return res.json(user);
+    return res.json(updatedUser);
   }
 
   public async destroy(req: Request, res: Response): Promise<Response> {
     const { id } = req.params;
 
     const userRepository = new UsersRepository();
-    const user = await userRepository.findById(id);
+    const checkUserExist = await userRepository.findById(id);
 
-    if (!user) {
+    if (!checkUserExist) {
       throw new AppError('Usuário não encontrado!', 404);
     }
 
