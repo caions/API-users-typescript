@@ -35,7 +35,7 @@ docker run --name hivelabs_testevaga -e POSTGRES_PASSWORD=docker -p 5434:5432 -d
 # com usuário postgres e senha docker
 
 # Rode as migrations para criar a tabela 'user' no banco de dados
-$ yarn typeorm migration:run
+$ yarn typeorm migration:run ou npm run typeorm migration:run
 
 # Gere a documentação da api com o swagger
 $ yarn doc ou npm run doc
